@@ -1,0 +1,89 @@
+html, body {min-height: 100vh;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, main {display: block;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, main {margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+ol, ul {list-style:none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,  q:before, q:after {content:''; content:none;}
+del {text-decoration: line-through;}
+svg:not(:root) {overflow: hidden;}
+abbr[title], dfn[title] {border-bottom: 1px dotted; cursor: help;}
+table {width: 100%; border-collapse: collapse; border-spacing: 0; empty-cells: show; table-layout: fixed;}
+input, select {vertical-align: middle;}
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom; *vertical-align: baseline;}
+button, input, select, textarea {margin: 0; font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;}
+textarea {resize: none;}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {-webkit-appearance: button; cursor: pointer;}
+button[disabled], html input[disabled] {cursor: default;}
+input[type="checkbox"], input[type="radio"] {box-sizing: border-box; padding: 0; *height: 13px; *width: 13px;}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}
+img {display: block; max-width: 100%; height: auto !important;}
+td img {vertical-align: top;}
+address {display: inline;}
+code, kbd, pre, samp {font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 14px;}
+pre {white-space: pre; white-space: pre-wrap; word-wrap: break-word;}
+a:hover, a:active {outline: none;}
+a, a:hover, a:visited {text-decoration: none;}
+iframe {display: block; max-width: 100%;}
+fieldset {border: 1px solid #c0c0c0; padding: 16px;}
+::-webkit-input-placeholder {color: #fff; font-family: "Hack", Helvetica, Arial, sans-serif; font-size: 14px;}
+:-moz-placeholder {color: #fff; font-family: "Hack", Helvetica, Arial, sans-serif; font-size: 14px;}
+::-moz-placeholder {color: #fff; font-family: "Hack", Helvetica, Arial, sans-serif; font-size: 14px;}
+:-ms-input-placeholder {color: #fff; font-family: "Hack", Helvetica, Arial, sans-serif; font-size: 14px;}
+::-moz-selection {background-color: transparent; color: #000;}
+::selection {background-color: transparent; color: #000;}
+*, *:before, *:after {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.cf:before, .cf:after {content:""; display:table;} .cf:after {clear:both;}
+
+body {
+  font: 18px/1.8em "Helvetica", sans-serif;
+  background-color: #000;
+  color: #cae1bc;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+
+.wrapper {padding: 24vh 32vw 0 32vw;}
+
+@keyframes fading-bg {
+  0% {background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 100%);}
+  10% {background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);}
+  24% {background: linear-gradient(to bottom,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);}
+  37% {background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);}
+  47% {background: linear-gradient(to bottom,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);}
+  59% {background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);}
+  69% {background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%);}
+  79% {background: linear-gradient(to bottom,  rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%);}
+  89% {background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%);}
+  100% {background: linear-gradient(to bottom,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%);}
+}
+@keyframes text-blur {
+  0% {filter: blur(0); opacity: 1;}
+  10% {filter: blur(0.1px); opacity: 0.94;}
+  37% {filter: blur(0.2px); opacity: 0.8;}
+  47% {filter: blur(0.4px); opacity: 0.72;}
+  59% {filter: blur(0.5px); opacity: 0.6;}
+  69% {filter: blur(1px); opacity: 0.54;}
+  79% {filter: blur(1.7px); opacity: 0.42;}
+  89% {filter: blur(2.4px); opacity: 0.32;}
+  94% {filter: blur(2.8px); opacity: 0.24;}
+  100% {filter: blur(3.7px); opacity: 0.17;}
+}
+
+.copy {position: relative;}
+.copy:before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: fading-bg 2600ms 1 forwards;
+  z-index: 10;
+}
+.copy p {
+  animation: text-blur 3200ms 1 forwards;
+}
+
