@@ -33,7 +33,7 @@ var Random = (function () {
 window.onload = function() {
   (function($){
 
-    const sideMsg = ["message 1", "message 2", "message 3", "message 4", "message 5", "message 6"]
+    const sideMsg = ["I am not worthy", "I am alive?", "You are going to die here", "You are worthless", "Where is thy God now?", "Shut up!", "I am emptiness", "You are worthless", "Ha ha ha!", "I am God!", "Kill yourself!", "Scream. I want to hear you scream", "I stink"]
     let g_timer = null;
     
     function getRandomInt(min, max) {
@@ -56,17 +56,18 @@ window.onload = function() {
     
     let rnd = new Random(1);
 
-    console.log(rnd.getInteger());
+    //console.log(rnd.getInteger());
 
 
-    mcTimer("something goes here");
+    //mcTimer("something goes here");
 
     function doSomething() {}
       (function loop() {
-        var rand = getRandomInt(5400, 18000);
+        var rand = getRandomInt(8400, 18000);
         setTimeout(function() {
-          var randM = getRandomInt(0, 5);
-          console.log(sideMsg[randM]);
+          var randM = getRandomInt(0, sideMsg.length);
+          $("body .voices").remove();
+          $("body").append("<p class='voices' data-text='"+sideMsg[randM]+"'>"+sideMsg[randM]+"</p>")
           doSomething();
           loop();  
         }, rand);
