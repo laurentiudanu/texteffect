@@ -33,7 +33,7 @@ var Random = (function () {
 window.onload = function() {
   (function($){
 
-
+    const sideMsg = ["message 1", "message 2", "message 3", "message 4", "message 5", "message 6"]
     let g_timer = null;
     
     function getRandomInt(min, max) {
@@ -54,7 +54,7 @@ window.onload = function() {
     }
     
     
-    let rnd = new Random(4);
+    let rnd = new Random(1);
 
     console.log(rnd.getInteger());
 
@@ -63,13 +63,15 @@ window.onload = function() {
 
     function doSomething() {}
       (function loop() {
-        var rand = getRandomInt(5400, 32000);
+        var rand = getRandomInt(5400, 18000);
         setTimeout(function() {
-          console.log("generate message on screen");
+          var randM = getRandomInt(0, 5);
+          console.log(sideMsg[randM]);
           doSomething();
           loop();  
         }, rand);
     }());
+
 
     
     
