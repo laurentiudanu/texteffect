@@ -35,27 +35,46 @@ window.onload = function() {
 
 
     let g_timer = null;
+    
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min) + min);
+    }
 
     function mcTimer(message) {
       g_timer = window.setTimeout(function() {
-        console.log(message)
-      }, getRandomInt(1400, 3000));
+        console.log(message);
+        clearTimeout(g_timer);
+      }, getRandomInt(3400, 12000));
     }
     
     function mcTimerReset() {
       clearTimeout(g_timer);
     }
     
-    function getRandomInt(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-    }
     
     let rnd = new Random(4);
 
     console.log(rnd.getInteger());
+
+
     mcTimer("something goes here");
+
+    function doSomething() {}
+      (function loop() {
+        var rand = getRandomInt(5400, 32000);
+        setTimeout(function() {
+          console.log("generate message on screen");
+          doSomething();
+          loop();  
+        }, rand);
+    }());
+
+    
+    
+    
+    
 
     /*$(".overlay").animate({opacity: 1}, 2500, function(){
       alert("done");
